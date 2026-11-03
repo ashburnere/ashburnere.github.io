@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einfache React & Babel Website</title>
+    
+    <!-- 1. React und React-DOM über CDN laden -->
+    <script src="https://unpkg.com" crossorigin></script>
+    <script src="https://unpkg.com" crossorigin></script>
+    
+    <!-- 2. Babel im Browser laden, um JSX zu kompilieren -->
+    <script src="https://unpkg.com"></script>
+
+    <!-- Einfaches Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Das Ziel-Element, in das React die App rendert -->
+    <div id="root"></div>
+
+    <!-- 3. React-Code (Wichtig: type="text/babel" für den Babel-Compiler) -->
+    <script type="text/babel">
+        // Eine einfache React-Komponente mit State (Zähler)
+        function App() {
+            const [count, setCount] = React.useState(0);
+
+            return (
+                <div className="card">
+                    <h1>Hallo, React & Babel! 👋</h1>
+                    <p>Diese Website läuft komplett im Browser ohne Build-Tools.</p>
+                    <p>Klicks: <strong>{count}</strong></p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Klick mich
+                    </button>
+                </div>
+            );
+        }
+
+        // Die App in das DOM rendern
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+
+</body>
+</html>
