@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einfache React & Babel Website</title>
     
-    <!-- 1. React und React-DOM über CDN laden (MIT crossorigin!) -->
-    <script src="https://unpkg.com" crossorigin></script>
-    <script src="https://unpkg.com" crossorigin></script>
+    <!-- 1. Stabile React-Bibliotheken über jsDelivr laden -->
+    <script src="https://jsdelivr.net" crossorigin></script>
+    <script src="https://jsdelivr.net" crossorigin></script>
     
-    <!-- 2. Babel im Browser laden (Ebenfalls MIT crossorigin!) -->
-    <script src="https://unpkg.com" crossorigin></script>
+    <!-- 2. Babel über cdnjs laden (mit vollständiger Versionsangabe) -->
+    <script src="https://cloudflare.com" crossorigin></script>
 
     <!-- Einfaches Styling -->
     <style>
@@ -47,7 +47,7 @@
 </head>
 <body>
 
-    <!-- Das Ziel-Element, in das React die App rendert -->
+    <!-- Das Ziel-Element für React -->
     <div id="root"></div>
 
     <!-- 3. React-Code (Wichtig: type="text/babel") -->
@@ -58,7 +58,7 @@
             return (
                 <div className="card">
                     <h1>Hallo, React & Babel! 👋</h1>
-                    <p>Diese Website läuft jetzt fehlerfrei auf GitHub Pages.</p>
+                    <p>Diese Version nutzt alternative, stabile CDNs für GitHub Pages.</p>
                     <p>Klicks: <strong>{count}</strong></p>
                     <button onClick={() => setCount(count + 1)}>
                         Klick mich
