@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einfache React & Babel Website</title>
     
-    <!-- 1. React und React-DOM über CDN laden -->
+    <!-- 1. React und React-DOM über CDN laden (MIT crossorigin!) -->
     <script src="https://unpkg.com" crossorigin></script>
     <script src="https://unpkg.com" crossorigin></script>
     
-    <!-- 2. Babel im Browser laden, um JSX zu kompilieren -->
-    <script src="https://unpkg.com"></script>
+    <!-- 2. Babel im Browser laden (Ebenfalls MIT crossorigin!) -->
+    <script src="https://unpkg.com" crossorigin></script>
 
     <!-- Einfaches Styling -->
     <style>
@@ -50,16 +50,15 @@
     <!-- Das Ziel-Element, in das React die App rendert -->
     <div id="root"></div>
 
-    <!-- 3. React-Code (Wichtig: type="text/babel" für den Babel-Compiler) -->
+    <!-- 3. React-Code (Wichtig: type="text/babel") -->
     <script type="text/babel">
-        // Eine einfache React-Komponente mit State (Zähler)
         function App() {
             const [count, setCount] = React.useState(0);
 
             return (
                 <div className="card">
                     <h1>Hallo, React & Babel! 👋</h1>
-                    <p>Diese Website läuft komplett im Browser ohne Build-Tools.</p>
+                    <p>Diese Website läuft jetzt fehlerfrei auf GitHub Pages.</p>
                     <p>Klicks: <strong>{count}</strong></p>
                     <button onClick={() => setCount(count + 1)}>
                         Klick mich
@@ -68,7 +67,6 @@
             );
         }
 
-        // Die App in das DOM rendern
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
